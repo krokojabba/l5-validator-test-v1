@@ -1,15 +1,13 @@
-import { isNumber } from './NumberSchema.js';
+/* eslint-disable class-methods-use-this */
+import ArraySchema from './ArraySchema.js';
+import NumberSchema from './NumberSchema.js';
 
 export default class Validator {
-  constructor(checks = []) {
-    this.checks = checks;
-  }
-
   number() {
-    return new Validator([...this.checks, isNumber]);
+    return new NumberSchema();
   }
 
-  isValid(testObj) {
-    return this.checks.reduce((acc, check) => acc && check(testObj), true);
+  array() {
+    return new ArraySchema();
   }
 }
