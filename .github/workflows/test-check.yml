@@ -1,9 +1,7 @@
 name: test-check
 
 on:
-  push:
-    branches:
-      - main
+  - push
 
 jobs:
   build:
